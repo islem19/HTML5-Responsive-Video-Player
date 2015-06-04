@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 responsive Video Player</title>
+	<link rel="stylesheet" type="text/css" href="css/materialize.css" media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+</head>
+<body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	<div class="container">
+      <p class="z-depth-2">
+      <div id="player">
+
+      	<div id="video-container no-controls" >
+      		<div id="screen">
+      				<img id="start-button" src="images/start.png">
+      		</div>
+      		<video id="video" class="responsive-video"  width="100%" poster="images/thumbnail.jpg" no-controls>
+    			<source src="test.mp4" type="video/mp4">
+ 			</video>
+      	</div>
+
+      	<div id="pbar-container">
+      		<div id="pbar">
+      		</div>
+      	</div>
+
+      	<div id="buttons-container">
+      		<img id="play-button" src="images/play.png" title="Play">
+      		<div id="time-field">
+      			00:00/00:00
+      		</div>
+      		<img id="sound-button" src="images/volume-high.png" title="Mute">
+      		<div id="sbar-container">
+      			<div id="sbar">
+      			</div>
+      		</div>	
+      		<img id="fullscreen-button" src="images/fullscreen.png" title="Full screen">
+      	</div>
+
+      </div>
+ 	  </p>
+ 	</div>
+</body>
+</html>
