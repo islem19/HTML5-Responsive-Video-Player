@@ -1,10 +1,9 @@
 window.addEventListener('load',function(){
-
+  	
 	// video container
 	video = document.getElementById('video');
 	screenstart = document.getElementById('start-button');
 	backscreen = document.getElementById('screen');
-	
 
 	// progress container
 	pbar = document.getElementById('pbar');
@@ -27,13 +26,12 @@ window.addEventListener('load',function(){
 		fullscreen.addEventListener('click',full, false);
 		screenstart.addEventListener('click', playorpause , false);
 		updateplayer();
-		
  
 	}, false);
-	
-
 
 },false);
+
+// function when playing or pausing video
 
 function playorpause () {
 
@@ -57,6 +55,7 @@ function playorpause () {
 		}
 }
 
+// function to update the changes on the video player
 function updateplayer () {
 
 		var percentage = ( video.currentTime / video.duration) * 100;
@@ -77,6 +76,7 @@ function updateplayer () {
 		}
 }
 
+// function to update changes on the current time and playing bar
 function skip(ev){
 
 	var mouseX = ev.pageX - pbarcontainer.offsetLeft;
@@ -87,6 +87,7 @@ function skip(ev){
 
 }
 
+// function to get the current time and the total time 
 function getformatedtime(){
 
 	var seconds = Math.round(video.currentTime);
@@ -105,6 +106,7 @@ function getformatedtime(){
 
 }
 
+// function to mute and unmute the video
 function mute(){
 	if (!video.muted)
 	{
@@ -123,6 +125,7 @@ function mute(){
 	 }
 }
 
+// function when changing volume 
 function changevolume(ev){
 
 	var mouseX = ev.pageX - sbarcontainer.offsetLeft;
@@ -138,6 +141,7 @@ function changevolume(ev){
 
 }
 
+// function when clicking on the fullscreen 
 function full()
 {
 	if ( video.requestFullscreen)
@@ -157,3 +161,6 @@ function full()
 	    	video.msRequestFullscreen();
 	    }
 }
+
+
+

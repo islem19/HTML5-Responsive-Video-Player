@@ -6,30 +6,62 @@
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen,projection">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
 </head>
 <body>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 
-	<div class="container">
-      <p class="z-depth-2">
-      <div id="player">
+      
+<div class="row">
+ <div class="col s12">   
 
+<nav style="background-color: rgb(50,170,220); position:center;" >
+    <div class="nav-wrapper">
+       <a href="test.mp4" poster="images/thumbnail.jpg" class="brand-logo" style="margin-left:45%" >Logo</a>
+
+      <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+      <ul class="side-nav" id="mobile-demo" style="background-color: rgb(50,170,220);" >
+        <ul class="collapsible" data-collapsible="accordion" >
+        <li>
+        <div class="collapsible-header">First category</div>
+        <div class="collapsible-body" >
+        <!-- you can add more videos under the code line don't forget to add JS code down below -->
+        <a class="video-1" poster="images/html5.png" href="test1.mp4">Video1</a>
+        <a class="video-2" poster="images/css3.png" href="test.mp4">Video2</a>
+        </div>
+        </li>
+        <li>
+        <div class="collapsible-header">Second Category</div>
+        <div class="collapsible-body">
+        <a class="video-3" poster="images/js.png" href="test1.mp4">Video3</a>
+        <a class="video-4" poster="images/html5.png" href="test.mp4">Video4</a>
+        </div>
+        </li>  
+        </ul>
+      </ul>
+    </div>
+</nav>
+    </div>
+
+
+    <div class="col s12">
+	   <div class="container">
+      <p class="z-depth-3">
+      <div id="player">
       	<div id="video-container no-controls" >
       		<div id="screen">
       				<img id="start-button" src="images/start.png">
       		</div>
-      		<video id="video" class="responsive-video"  width="100%" poster="images/thumbnail.jpg" no-controls>
-    			<source src="test.mp4" type="video/mp4">
+      		<video id="video" class="video" class="responsive-video"  width="100%" poster="images/thumbnail.jpg" no-controls>
+    			<source  src="test.mp4" type="video/mp4">
  			</video>
       	</div>
-
       	<div id="pbar-container">
       		<div id="pbar">
       		</div>
       	</div>
-
       	<div id="buttons-container">
       		<img id="play-button" src="images/play.png" title="Play">
       		<div id="time-field">
@@ -42,9 +74,31 @@
       		</div>	
       		<img id="fullscreen-button" src="images/fullscreen.png" title="Full screen">
       	</div>
-
       </div>
  	  </p>
- 	</div>
+  </div>
+ </div>
+</div>
+
+
+
+<script type="text/javascript">
+   $(document).ready(function(){
+   $(".button-collapse").sideNav({
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
+   $('.collapsible').collapsible();
+    });
+
+
+   // when you add more videos in the menu, add the classes name in the code line below:
+   $(".video-1, .video-2, .video-3, .video-4, .brand-logo ").on("click", function(event) {
+          event.preventDefault();
+          $(".video").prop("src", $(event.currentTarget).attr("href"));
+          $(".video").prop("poster", $(event.currentTarget).attr("poster"));
+        });
+</script>
+
 </body>
 </html>
